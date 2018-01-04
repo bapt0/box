@@ -1,0 +1,31 @@
+
+body {
+/*
+  background: url('img/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+*/
+    background-color: #222;
+}
+
+.box {
+  width: 600px;
+  height: 400px;
+  align-items : center;
+  margin-top: 200px;
+  background-color: #DDD;
+  opacity: .9;
+}
+
+.card-block {
+  margin-top: 30px;
+}
+
+.ans {
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.operation {
+  font-size: 50px;
+}

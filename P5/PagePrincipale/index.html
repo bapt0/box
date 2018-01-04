@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Site de Baptiste</title>
+
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+	<script src="libraries/p5.min.js"></script>
+	<script src="libraries/p5.dom.js"></script>
+	<script src="sketch.js"></script>
+</head>
+<body>
+	<div id="content">
+		<h1 class="title">BAPTISTE</h1>
+		<div class="boxTxtWrap"><p class="boxTxt">Accéder à la boîte</p></div>
+	</div>
+	<div id=canvasHolder></div>
+	<style>
+		@font-face {
+	    font-family: custom;
+	    src: url(custom.ttf);
+		}
+		body {
+			background-color: #2D3E50;
+			color: white;
+			margin: 0;
+			overflow: hidden;
+			z-index: 0;
+			user-select: none;
+		}
+		#canvasHolder {
+	    position: absolute;
+	    margin: auto;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+			z-index: -1;
+	  }
+		#content {
+			position: relative;
+			width: 100%;
+			text-align: center;
+		}
+		.title {
+			position: relative;
+			font-family: custom, Times, serif;
+			font-size: 4em;
+			top: -300px;
+		}
+		.boxTxt {
+			font-family: Arial, Times, serif;
+			position: relative;
+			opacity: 0;
+			transition: 0.5s;
+			font-size: 1.5em;
+		}
+		a {
+			font-size: 60px;
+		}
+	</style>
+
+	<script src="script.js"></script>
+</body>
+</html>

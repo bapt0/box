@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <meta charset="utf-8"/>
+    <title>Morpion</title>
+  </head>
+
+  <body>
+    <h1>Jeu du morpion</h1>
+    <h2 id="score"><span>Joueur 1: 0 </span>| <span>Joueur 2: 0</span></h2>
+    <h2 id="winner"></h2>
+    <button id="reload" disabled="true">Recommencer la partie</button>
+    <h3 id="jtour">Au tour du joueur 1!</h3>
+    <div id="game">
+      <div l="0">
+        <div p="0" class="pion"></div>
+        <div p="1" class="pion"></div>
+        <div p="2" class="pion"></div>
+      </div>
+      <div l="1">
+        <div p="0" class="pion"></div>
+        <div p="1" class="pion"></div>
+        <div p="2" class="pion"></div>
+      </div>
+      <div l="2">
+        <div p="0" class="pion"></div>
+        <div p="1" class="pion"></div>
+        <div p="2" class="pion"></div>
+      </div>
+    </div>
+    <p id="tour">Tour: 0</p>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/index.js"></script>
+</html>

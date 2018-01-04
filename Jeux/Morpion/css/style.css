@@ -1,0 +1,73 @@
+#game {
+  background-color: #AAF;
+  width: 488px;
+  height: 489px;
+  margin: auto;
+  border: 5px solid #BBB;
+}
+
+#game > div {
+  padding: 0;
+  margin: 0;
+}
+
+.pion {
+  background: #555;
+  width: 160px;
+  height: 160px;
+  margin: 0;
+  display: inline-block;
+}
+
+.pion:hover {
+  background-color: #888;
+}
+
+body {
+  background: linear-gradient(#111, #555);
+}
+
+h1 {
+  font-family: Verdana, Georgia, Serif;
+  text-align: center;
+  color: #BBF;
+}
+
+.p1, .p1:hover {
+  background-color: #900 !important;
+}
+.p2, .p2:hover {
+  background-color: #0F0 !important;
+}
+
+#winner {
+  text-align: center;
+  color: #5F5;
+}
+
+#tour {
+  text-align: center;
+}
+
+#score {
+  text-align: center;
+  color: white;
+}
+
+#score:first-child {
+  color: #F00;
+}
+
+#score:last-child {
+  color: #0F0;
+}
+
+#reload {
+  display: block;
+  margin: auto;
+}
+
+#jtour {
+  text-align: center;
+  color: #EEE;
+}
