@@ -1,49 +1,41 @@
-let s = 4;
+let s = 20;
 let f = [];
 let sliders = [];
-
-function preload() {
-
-}
+let xoff = 0.5
 
 function setup() {
   createCanvas(windowWidth-10, windowHeight-10);
 
   f[0] = new Fun('red');
   f[1] = new Fun('blue');
-  // f[2] = new Fun('pink');
-  // f[3] = new Fun('tellow');
+  f[2] = new Fun('pink');
   f['tot'] = new Fun('white');
 
   for(var i = 0; i < f.length; i++) {
-    f[i].decalageY = (200/f.length)*i;
-    f['tot'].decalageY = 200;
-    sliders[i] = createSlider(0, 25);
+    f[i].decalageY = (300/f.length)*i;
+    f['tot'].decalageY = 300;
+    sliders[i] = createSlider(0, 100, 0);
     sliders[i].position(400, 20+(20*i));
   }
 }
 
-function mousePressed() {
-}
-
-
 function draw() {
-  // background(0);
+  background(0)
   translate(0, windowHeight/3);
 
-  f[0].draw(sin(2*PI*sliders[0].value()/100*f[0].x));
-  f[1].draw(sin(2*PI*sliders[1].value()/100*f[1].x));
-  // f[2].draw(sin(2*PI*0.15*f[2].x));
-  // f[3].draw(sin(2*PI*Math.random()*f[3].x));
-  f['tot'].draw(sum());
-}
+  for(var i = 0; i < width; i += xoff) {
+    f[0].draw(sin(2*PI*sliders[0].value()/100*f[0].x), i);
+    f[1].draw(sin(2*PI*sliders[1].value()/100*f[1].x), i);
+    f[2].draw(sin(2*PI*sliders[2].value()/100*f[2].x), i);
 
-function sum() {
-  var total = 0;
-  f.forEach((a) => {
-    total += a.y;
-  });
-  return total;
+    var total = 0;
+    f.forEach((a) => {
+      total += a.y;
+    });
+
+    f['tot'].draw(total, i);
+  }
+
 }
 
 class Fun {
@@ -53,15 +45,11 @@ class Fun {
     this.color = c;
     this.decalageY = 0;
   }
-  draw(y) {
+  draw(y, i) {
     stroke(this.color);
-    line((this.x)*s, (this.y)*s+this.decalageY, (this.x+1)*s, (-y)*s+this.decalageY)
+    line((this.x)*s, (this.y)*s+this.decalageY, (this.x+xoff)*s, (-y)*s+this.decalageY)
     point(this.x*s, this.y*s+this.decalageY);
-    this.x += 1;
+    this.x = i;
     this.y = -y;
-    if(this.x >= windowWidth/s) {
-      background(0);
-      this.x = 0;
-    }
   }
 }
