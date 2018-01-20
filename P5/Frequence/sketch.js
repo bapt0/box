@@ -8,13 +8,13 @@ function setup() {
 
   f[0] = new Fun('red');
   f[1] = new Fun('blue');
-  f[2] = new Fun('pink');
+  // f[2] = new Fun('pink');
   f['tot'] = new Fun('white');
 
   for(var i = 0; i < f.length; i++) {
-    f[i].decalageY = (300/f.length)*i;
+    f[i].decalageY = (500/f.length)*i;
     f['tot'].decalageY = 300;
-    sliders[i] = createSlider(0, 100, 0);
+    sliders[i] = createSlider(0, 1000, 0);
     sliders[i].position(400, 20+(20*i));
   }
 }
@@ -24,9 +24,14 @@ function draw() {
   translate(0, windowHeight/3);
 
   for(var i = 0; i < width; i += xoff) {
-    f[0].draw(sin(2*PI*sliders[0].value()/100*f[0].x), i);
-    f[1].draw(sin(2*PI*sliders[1].value()/100*f[1].x), i);
-    f[2].draw(sin(2*PI*sliders[2].value()/100*f[2].x), i);
+
+    f.forEach((f, index) => {
+      f.draw(sin(sliders[index].value()/100+f.x), i)
+    })
+
+    // f[0].draw(sin(sliders[0].value()/100+f[0].x), i);
+    // f[1].draw(sin(sliders[1].value()/100+f[1].x), i);
+    // f[2].draw(cos(sliders[2].value()/100*f[2].x), i);
 
     var total = 0;
     f.forEach((a) => {
@@ -44,6 +49,16 @@ class Fun {
     this.y = 0;
     this.color = c;
     this.decalageY = 0;
+
+    this.decalageY = (500/f.length)*f.length;
+    if(f.color != 'white') {
+      sliders[f.length] = createSlider(0, 1000, 0);
+      sliders[f.length].position(400, 20+(20*f.length));
+    }
+
+    for(var i = 0; i < f.length; i++) {
+      f[i].decalageY = (500/f.length)*i;
+    }
   }
   draw(y, i) {
     stroke(this.color);
