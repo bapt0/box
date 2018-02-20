@@ -1,0 +1,16 @@
+{
+  "name": "carsimulator",
+  "version": "1.0.0",
+  "description": "A fucking car simulator",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "chamalotbis",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.16.1",
+    "socket.io": "2.0.3"
+  }
+}
